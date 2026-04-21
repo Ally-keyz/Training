@@ -21,6 +21,7 @@ export const registerController = async(req, res)=>{
 
 export const loginController = async(req,res) =>{
     try {
+        console.log(req.body)
         const {email , password } = req.body;
         if(!email || !password) {
             return res.status(400) .json({error:"Email  and password are required!"});
