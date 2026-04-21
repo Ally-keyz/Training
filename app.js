@@ -8,6 +8,10 @@ dotenv.config();
 
 // create the express app
 const app = express();
+// use middleware
+app.use(cors({
+    origin: "*"
+}));
 
 // use the auth routes
 app.use(express.json());
@@ -16,13 +20,6 @@ app.get('/',(req,res)=>{
     res.send("Helloword");
 })
 app
-
-
-// use middleware
-app.use(cors({
-    origin: "*"
-}));
-
 
 // connect to the database
 connectDB();
